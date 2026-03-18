@@ -4,19 +4,14 @@
       <div class="card-body">
         <h1 class="card-title h3 mb-4">New Entry for <%= @place.name %></h1>
 
-        <form action="/entries" method="post">
+        <form action="/entries" method="post" enctype="multipart/form-data">
           <input type="hidden" name="place_id" value="<%= @place.id %>">
 
           <div class="mb-3">
             <label for="title_input" class="form-label">Title</label>
             <input type="text" name="title" id="title_input" class="form-control">
           </div>
-          
-          <div class="mb-3">
-            <label for="uploaded_image_input" class="form-label">Upload Image</label>
-            <input type="file" name="uploaded_image" id="uploaded_image_input" class="form-control">
-          </div>
-          
+
           <div class="mb-3">
             <label for="description_input" class="form-label">Description</label>
             <textarea name="description" id="description_input" class="form-control" rows="3"></textarea>
@@ -25,6 +20,11 @@
           <div class="mb-3">
             <label for="occurred_on_input" class="form-label">Occurred On</label>
             <input type="date" name="occurred_on" id="occurred_on_input" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label for="image_input" class="form-label">Upload Image</label>
+            <input type="file" name="uploaded_image" id="image_input" class="form-control">
           </div>
 
           <div class="d-grid gap-2">

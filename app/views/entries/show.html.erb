@@ -1,6 +1,9 @@
 <div class="row justify-content-center">
   <div class="col-md-8">
     <div class="card shadow">
+      <% if @entry.uploaded_image.attached? %>
+        <img src="<%= url_for(@entry.uploaded_image) %>" class="card-img-top" alt="<%= @entry.title %>">
+      <% end %>
       <div class="card-body">
         <h1 class="card-title text-primary"><%= @entry.title %></h1>
         <h2 class="card-subtitle mb-3 text-muted h5"><%= @entry.occurred_on %></h2>

@@ -9,6 +9,9 @@
   <% for entry in @entries %>
     <div class="col-md-6 col-lg-4 mb-4">
       <div class="card h-100 shadow-sm">
+        <% if entry.uploaded_image.attached? %>
+          <img src="<%= url_for(entry.uploaded_image) %>" class="card-img-top" alt="<%= entry.title %>">
+        <% end %>
         <div class="card-body">
           <h3 class="card-title h5 text-primary">
             <a href="/entries/<%= entry["id"] %>" class="text-decoration-none"><%= entry["title"] %></a>
