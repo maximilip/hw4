@@ -1,0 +1,19 @@
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow">
+      <div class="card-body">
+        <h1 class="card-title text-primary"><%= @entry.title %></h1>
+        <h2 class="card-subtitle mb-3 text-muted h5"><%= @entry.occurred_on %></h2>
+        <h3 class="h6 text-secondary mb-4">Location: <a href="/places/<%= @entry.place.id %>" class="text-decoration-none"><%= @entry.place.name %></a></h3>
+
+        <div class="entry-description p-3 bg-light border rounded">
+          <%= @entry.description %>
+        </div>
+
+        <div class="mt-4">
+          <a href="/places/<%= @entry.place_id %>" class="btn btn-outline-primary">Back to <%= @entry.place.name %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

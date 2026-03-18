@@ -10,9 +10,11 @@
     <div class="col-md-6 col-lg-4 mb-4">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
-          <h3 class="card-title h5 text-primary"><%= entry["title"] %></h3>
+          <h3 class="card-title h5 text-primary">
+            <a href="/entries/<%= entry["id"] %>" class="text-decoration-none"><%= entry["title"] %></a>
+          </h3>
           <h4 class="card-subtitle mb-2 text-muted h6"><%= entry["occurred_on"] %></h4>
-          <p class="card-text"><%= entry["description"] %></p>
+          <p class="card-text"><%= truncate(entry["description"], length: 100) %></p>
         </div>
       </div>
     </div>

@@ -1,6 +1,14 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user
 
+  def show
+    @entry = Entry.find_by({ "id" => params["id"], "user_id" => @current_user.id })
+    if @entry.nil?
+      flash["notice"] = "Entry not found."
+      redirect_to "/places"
+    end
+  end
+
   def new
     @place = Place.find_by({ "id" => params["place_id"], "user_id" => @current_user.id })
     if @place.nil?
