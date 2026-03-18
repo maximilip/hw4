@@ -24,8 +24,9 @@
         <div>
           <a href="/" class="text-decoration-none">Home</a>
         </div>
-        <div class="nav-right d-flex gap-2">
+        <div class="nav-right d-flex gap-2 align-items-center">
           <% if @current_user %>
+            <span><%= @current_user.username %></span>
             <a href="/logout" class="btn btn-outline-secondary">Logout</a>
           <% else %>
             <a href="/login" class="btn btn-outline-primary">Login</a>
