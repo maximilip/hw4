@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @user
       if @user.authenticate(params["password"])
         session["user_id"] = @user.id
-        flash["notice"] = "You've logged in."
+        flash["notice"] = "Welcome, #{@user.username}."
         redirect_to "/places"
       else
         flash["notice"] = "Incorrect password."
